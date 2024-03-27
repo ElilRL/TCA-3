@@ -24,5 +24,29 @@ function updateSix(){
 }
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Get reference to the bee image and the fun fact div
+    var beeImage = document.querySelector('.bee-image');
+    var funFactDiv = document.getElementById('fun-fact');
+  
+    // Define an array of fun facts about bees
+    var funFacts = [
+      "Honeybees have five eyes, including three simple eyes and two compound eyes.",
+      "Bees communicate with each other through dance.",
+      "A beehive can contain up to 80,000 bees during peak season.",
+      "Bees are the only insect in the world that make food that people can eat (honey).",
+      "Bees flap their wings about 200 times per second, which is what creates their distinctive buzz."
+    ];
+  
+    // Add click event listener to the bee image
+    beeImage.addEventListener('click', function() {
+      // Generate a random index to get a random fun fact
+      var randomIndex = Math.floor(Math.random() * funFacts.length);
+      // Display the random fun fact
+      funFactDiv.textContent = funFacts[randomIndex];
+      // Show the fun fact div
+      funFactDiv.style.display = 'block';
+    });
+  });
 
 
